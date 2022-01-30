@@ -1,21 +1,24 @@
 import React from "react";
 
-function Splash() {
+function Splash(props: any) {
+  const { handleNames } = props;
   return (
-    <div>
-      <h1>We have engineered the perfect match making algorithm!</h1>
-      <h3>
-        All you have to do is input your name and the person of your dreams
-        inputs their name, after we analyse your playing techniques, we can tell
-        you if you are compatible or not.
-      </h3>
-      <form>
+    <div className="splash-page">
+      <div className="splash-div">
+        <h1>True Love Test!</h1>
+        <h3>
+          Play a game of Tic-Tac-Toe and find out if your partner is your True
+          Love!
+        </h3>
+      </div>
+      <form className="splash-form" onSubmit={handleNames}>
         <label>Your Name:</label>
-        <input></input>
+        <input name="yourName" type="text"></input>
+        <h1>VS</h1>
         <label>Partners Name:</label>
-        <input></input>
-        <button>Begin</button>
+        <input name="partnersName" type="text"></input>
       </form>
+      <button type="submit">Begin</button>
     </div>
   );
 }

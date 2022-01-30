@@ -1,9 +1,11 @@
 import * as React from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Board } from "./Board";
 import { BoardState, useGameState, Value } from "./GameState";
 import { MoveLog } from "./log";
 import { StyledSquare } from "./StyledSquare";
+import Splash from "./Splash";
 
 //set the size of the gap between the rows and columns
 type LayoutProps = {
@@ -27,16 +29,39 @@ export const Column = styled.div<LayoutProps>`
 function Game() {
   const { gameState, current, xIsNext, winner, handleClick, jumpTo } =
     useGameState();
+  const [yourName, setName] = useState("");
+  const [partnersName, setPartnerName] = useState("");
+  const [splash, setSplash] = useState(true);
+
+  function handleNames(e: any) {
+    e.preventDefault();
+    let yourName = e.target.yourName.value;
+    let partnersName = e.target.partnersName.value;
+
+    setName(yourName);
+    setPartnerName(partnersName);
+    setSplash(false);
+  }
   return (
-    <Row gap={20}>
-      <Column gap={20}>
-        <div>
-          {winner ? `Winner: ${winner}` : `Next Player: ${xIsNext ? "X" : "O"}`}
-        </div>
-        <Board board={current} onClick={handleClick} />
-      </Column>
-      <MoveLog history={gameState.history} jumpTo={jumpTo} />
-    </Row>
+    <div>
+      {splash ? (
+        <Splash handleNames={handleNames} />
+      ) : (
+        <Row gap={20}>
+          <Column gap={20}>
+            <div>
+              {winner
+                ? `${
+                    winner == "X" ? yourName : partnersName
+                  } won! Our state of the art algorithm has given your love a 92% chance of success!`
+                : `${xIsNext ? yourName : partnersName}'s turn!`}
+            </div>
+            <Board board={current} onClick={handleClick} />
+          </Column>
+          <MoveLog history={gameState.history} jumpTo={jumpTo} />
+        </Row>
+      )}
+    </div>
   );
 }
 
@@ -51,7 +76,11 @@ export type SquareProps = {
 };
 
 export function Square(props: SquareProps) {
-  return <StyledSquare onClick={props.onClick}>{props.value}</StyledSquare>;
+  return (
+    <StyledSquare className="squares" onClick={props.onClick}>
+      {props.value}
+    </StyledSquare>
+  );
 }
 
 export default Game;

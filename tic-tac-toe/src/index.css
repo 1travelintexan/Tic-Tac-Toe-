@@ -1,13 +1,76 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 10px;
+  background-image: url("../public/heartsBG.png");
+  color: whitesmoke;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 10px;
+}
+
+.splash-page {
+  width: 100wv;
+  height: 100wh;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.splash-div {
+  width: 60vw;
+  background-color: rgba(137, 43, 226, 0.664);
+  margin: 20px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.splash-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40%;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px;
+  background-color: rgba(243, 100, 212, 0.993);
+}
+
+.splash-page button {
+  background-color: rgb(240, 3, 248);
+  color: aliceblue;
+  padding: 10px;
+  font-size: 3rem;
+  border-radius: 5px;
+  border: none;
+}
+
+label {
+  font-size: 2rem;
+}
+
+.board {
+  width: 80vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.squares:hover {
+  box-shadow: 4px 4px 10px rgb(236, 13, 13);
+}
+.splash-page button:hover {
+  border: 2px solid white;
+  box-shadow: 4px 4px 10px rgb(209, 6, 40);
 }
