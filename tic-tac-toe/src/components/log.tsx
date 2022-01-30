@@ -8,16 +8,19 @@ type logProps = {
 };
 export function MoveLog(props: logProps) {
   return (
-    <ol>
-      {props.history.map((_, index) => {
-        return (
-          <li key={index}>
-            <button onClick={() => props.jumpTo(index)}>
-              Go To{index === 0 ? "Start" : `Move to #${index}`}
-            </button>
-          </li>
-        );
-      })}
-    </ol>
+    <div className="log-container">
+      <h3>Move List:</h3>
+      <ol>
+        {props.history.map((_, index) => {
+          return (
+            <li key={index}>
+              <button onClick={() => props.jumpTo(index)}>
+                Go to{index === 0 ? "Start" : ` move #${index}`}
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }

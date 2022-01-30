@@ -14,11 +14,11 @@ function Splash(props: any) {
       <form className="splash-form" onSubmit={handleNames}>
         <label>Your Name:</label>
         <input name="yourName" type="text"></input>
-        <h1>VS</h1>
+        <h1>-VS-</h1>
         <label>Partners Name:</label>
         <input name="partnersName" type="text"></input>
+        <button type="submit">Begin</button>
       </form>
-      <button type="submit">Begin</button>
     </div>
   );
 }

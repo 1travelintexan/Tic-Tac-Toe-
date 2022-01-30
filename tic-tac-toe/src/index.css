@@ -49,16 +49,38 @@ h1 {
 .splash-page button {
   background-color: rgb(240, 3, 248);
   color: aliceblue;
+  margin: 20px;
   padding: 10px;
   font-size: 3rem;
   border-radius: 5px;
   border: none;
 }
 
+.splash-page input {
+  background-color: rgb(255, 199, 255);
+  height: 3rem;
+  width: 80%rem;
+  font-size: 2rem;
+  color: rgb(165, 0, 160);
+  margin-bottom: 20px;
+}
+
 label {
   font-size: 2rem;
 }
 
+.board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gamepage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .board {
   width: 80vw;
   padding: 10px;
@@ -67,10 +89,45 @@ label {
   align-items: center;
 }
 
+.game-header {
+  color: rgb(133, 5, 140);
+  background-color: rgba(251, 160, 222, 0.859);
+  text-align: center;
+  font-size: 4rem;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  font-size: 1.5rem;
+  color: rgb(133, 5, 140);
+  background-color: rgba(251, 160, 222, 0.859);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.log-container ol li button {
+  background-color: rgb(233, 98, 192);
+  margin: 5px;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+
 .squares:hover {
   box-shadow: 4px 4px 10px rgb(236, 13, 13);
 }
 .splash-page button:hover {
   border: 2px solid white;
   box-shadow: 4px 4px 10px rgb(209, 6, 40);
+}
+.log-container ol li button:hover {
+  border: 2px solid white;
 }
