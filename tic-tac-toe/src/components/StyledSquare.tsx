@@ -10,5 +10,5 @@ export const StyledSquare = styled.button`
   color: red;
   font-weight: bold;
   border-radius: 10px;
-  border: 1px solid red;
+  border: 4px solid red;
 `;

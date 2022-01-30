@@ -90,11 +90,12 @@ label {
 }
 
 .game-header {
-  color: rgb(133, 5, 140);
+  color: rgb(246, 11, 66);
   background-color: rgba(251, 160, 222, 0.859);
   text-align: center;
   font-size: 4rem;
-  padding: 10px;
+  padding: 15px;
+  margin: 10px;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -107,18 +108,19 @@ label {
   align-items: center;
   flex-direction: column;
   width: 30%;
-  font-size: 1.5rem;
-  color: rgb(133, 5, 140);
+  font-size: 2rem;
+  color: rgb(246, 11, 66);
   background-color: rgba(251, 160, 222, 0.859);
   border-radius: 10px;
   padding: 10px;
 }
 
 .log-container ol li button {
-  background-color: rgb(233, 98, 192);
+  background-color: rgb(247, 53, 98);
+  color: aliceblue;
   margin: 5px;
-  font-size: 1.2rem;
-  padding: 5px;
+  font-size: 1.4rem;
+  padding: 10px 30px 10px 30px;
 }
 
 .squares:hover {

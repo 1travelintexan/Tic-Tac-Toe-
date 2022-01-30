@@ -60,9 +60,9 @@ function Game() {
               <Board board={current} onClick={handleClick} />
             </Column>
           </Row>
+          <MoveLog history={gameState.history} jumpTo={jumpTo} />
         </div>
       )}
-      <MoveLog history={gameState.history} jumpTo={jumpTo} />
     </div>
   );
 }
