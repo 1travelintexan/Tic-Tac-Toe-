@@ -5,7 +5,7 @@ function Splash(props: any) {
   return (
     <div className="splash-page">
       <div className="splash-div">
-        <h1>Tic-Tac-Toe Love Test</h1>
+        <h1>Tic-Tac-Love?</h1>
         <h2>
           Based on how you play the game with your significant other, we can
           predict the success rate of your relationship.

@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 0;
   padding: 10px;
 }
@@ -15,7 +15,7 @@ h1 {
 .splash-page {
   width: 100wv;
   height: 100wh;
-  margin: 20px;
+  margin: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,19 +49,18 @@ h1 {
 .splash-page button {
   background-color: rgb(240, 3, 248);
   color: aliceblue;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
   font-size: 3rem;
   border-radius: 5px;
-  border: 2px solid rgba(255, 255, 255, 0);
 }
 
 .splash-page input {
   background-color: rgb(255, 199, 255);
   height: 3rem;
-  width: 80%rem;
+  width: 80%;
   font-size: 2rem;
-  color: rgb(165, 0, 160);
+  color: rgb(184, 67, 184);
   margin-bottom: 20px;
 }
 
@@ -119,15 +118,38 @@ label {
   background-color: rgba(251, 160, 222, 0.859);
   border-radius: 10px;
   padding: 10px;
+  margin-right: 20px;
 }
 
 .log-container ol li button {
   background-color: rgb(247, 53, 98);
   color: aliceblue;
   margin: 5px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 10px 30px 10px 30px;
   width: 150px;
+}
+
+.winner-box {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  z-index: 10;
+  height: 500px;
+  background-color: rgb(255, 138, 187);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner-card {
+  background-color: aliceblue;
+  border-radius: 20px;
+  box-shadow: 0px 0px 5px rgb(253, 238, 249);
+  width: 80%;
+  padding: 20px;
+  color: rgb(236, 13, 13);
 }
 
 .squares:hover {

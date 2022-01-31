@@ -32,12 +32,10 @@ function Game() {
   const [yourName, setName] = useState("");
   const [partnersName, setPartnerName] = useState("");
   const [splash, setSplash] = useState(true);
-
   function handleNames(e: any) {
     e.preventDefault();
     let yourName = e.target.yourName.value;
     let partnersName = e.target.partnersName.value;
-
     setName(yourName);
     setPartnerName(partnersName);
     setSplash(false);
@@ -50,11 +48,17 @@ function Game() {
         <div className="board-page">
           <div className="board-container">
             <div className="game-header">
-              {winner
-                ? `${
-                    winner == "X" ? yourName : partnersName
-                  } won! Our state of the art algorithm has given your love a 92% chance of success!`
-                : `${xIsNext ? yourName : partnersName}'s turn!`}
+              {winner ? (
+                <div className="winner-box">
+                  <div className="winner-card">
+                    {winner == "X"
+                      ? `${yourName} won! Based on your playing style, Tic-Tac-Love cannot guarantee the success of your relationship.`
+                      : `${partnersName} won! Based on your playing style, Tic-Tac-Love has calculated a that your relationship has a 91.2% success rate!`}
+                  </div>
+                </div>
+              ) : (
+                `${xIsNext ? yourName : partnersName}'s turn!`
+              )}
             </div>
             <Row gap={20}>
               <Column gap={20}>
@@ -63,6 +67,7 @@ function Game() {
             </Row>
           </div>
           <MoveLog history={gameState.history} jumpTo={jumpTo} />
+          {console.log(gameState.history, gameState.history.length == 10)}
         </div>
       )}
     </div>

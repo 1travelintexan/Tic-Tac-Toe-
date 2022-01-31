@@ -15,7 +15,7 @@ export function MoveLog(props: logProps) {
           return (
             <li key={index}>
               <button onClick={() => props.jumpTo(index)}>
-                Go to{index === 0 ? "Start" : ` move #${index}`}
+                {` move # ${index}`}
               </button>
             </li>
           );
