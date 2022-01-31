@@ -27,8 +27,17 @@ export const Column = styled.div<LayoutProps>`
 `;
 
 function Game() {
-  const { gameState, current, xIsNext, winner, handleClick, jumpTo } =
-    useGameState();
+  const {
+    gameState,
+    calculateWinner,
+    createBoardState,
+    setGameState,
+    current,
+    xIsNext,
+    winner,
+    handleClick,
+    jumpTo,
+  } = useGameState();
   const [yourName, setName] = useState("");
   const [partnersName, setPartnerName] = useState("");
   const [splash, setSplash] = useState(true);
@@ -40,6 +49,13 @@ function Game() {
     setPartnerName(partnersName);
     setSplash(false);
   }
+  const handleAgain = () => {
+    setSplash(true);
+    setName("");
+    setPartnerName("");
+    setGameState({ history: [createBoardState()], step: 0 });
+    console.log(gameState);
+  };
   return (
     <div className="gamepage-container">
       {splash ? (
@@ -55,6 +71,15 @@ function Game() {
                       ? `${yourName} won! Based on your playing style, Tic-Tac-Love cannot guarantee the success of your relationship.`
                       : `${partnersName} won! Based on your playing style, Tic-Tac-Love has calculated a that your relationship has a 91.2% success rate!`}
                   </div>
+                  <button onClick={handleAgain}>Try Again?</button>
+                </div>
+              ) : gameState.history.length == 10 ? (
+                <div className="winner-box">
+                  <div className="winner-card">
+                    Based on your playing style and intelligence levels,
+                    Tic-Tac-Love believes that you are a perfect match
+                  </div>
+                  <button onClick={handleAgain}>Try Again?</button>
                 </div>
               ) : (
                 `${xIsNext ? yourName : partnersName}'s turn!`
@@ -67,7 +92,6 @@ function Game() {
             </Row>
           </div>
           <MoveLog history={gameState.history} jumpTo={jumpTo} />
-          {console.log(gameState.history, gameState.history.length == 10)}
         </div>
       )}
     </div>

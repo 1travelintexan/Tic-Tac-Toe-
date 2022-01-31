@@ -43,7 +43,7 @@ export function useGameState() {
 
   const current = gameState.history[gameState.step];
   const xIsNext = gameState.step % 2 === 0;
-  const winner = calculateWinner(current);
+  let winner = calculateWinner(current);
 
   function handleClick(square: number) {
     const history = gameState.history.slice(0, gameState.step + 1);
@@ -69,6 +69,9 @@ export function useGameState() {
   }
 
   return {
+    calculateWinner,
+    createBoardState,
+    setGameState,
     gameState,
     current,
     xIsNext,
