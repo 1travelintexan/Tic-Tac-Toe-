@@ -47,19 +47,21 @@ function Game() {
       {splash ? (
         <Splash handleNames={handleNames} />
       ) : (
-        <div className="board-container">
-          <div className="game-header">
-            {winner
-              ? `${
-                  winner == "X" ? yourName : partnersName
-                } won! Our state of the art algorithm has given your love a 92% chance of success!`
-              : `${xIsNext ? yourName : partnersName}'s turn!`}
+        <div className="board-page">
+          <div className="board-container">
+            <div className="game-header">
+              {winner
+                ? `${
+                    winner == "X" ? yourName : partnersName
+                  } won! Our state of the art algorithm has given your love a 92% chance of success!`
+                : `${xIsNext ? yourName : partnersName}'s turn!`}
+            </div>
+            <Row gap={20}>
+              <Column gap={20}>
+                <Board board={current} onClick={handleClick} />
+              </Column>
+            </Row>
           </div>
-          <Row gap={20}>
-            <Column gap={20}>
-              <Board board={current} onClick={handleClick} />
-            </Column>
-          </Row>
           <MoveLog history={gameState.history} jumpTo={jumpTo} />
         </div>
       )}

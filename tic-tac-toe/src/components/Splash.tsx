@@ -5,11 +5,11 @@ function Splash(props: any) {
   return (
     <div className="splash-page">
       <div className="splash-div">
-        <h1>True Love Test!</h1>
-        <h3>
-          Play a game of Tic-Tac-Toe and find out if your partner is your True
-          Love!
-        </h3>
+        <h1>Tic-Tac-Toe Love Test</h1>
+        <h2>
+          Based on how you play the game with your significant other, we can
+          predict the success rate of your relationship.
+        </h2>
       </div>
       <form className="splash-form" onSubmit={handleNames}>
         <label>Your Name:</label>
