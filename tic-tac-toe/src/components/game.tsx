@@ -54,7 +54,6 @@ function Game() {
     setName("");
     setPartnerName("");
     setGameState({ history: [createBoardState()], step: 0 });
-    console.log(gameState);
   };
   return (
     <div className="gamepage-container">
