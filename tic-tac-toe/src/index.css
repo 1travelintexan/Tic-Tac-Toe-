@@ -8,7 +8,13 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+  margin: 0;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 2rem;
   margin: 0;
   padding: 10px;
 }
@@ -142,6 +148,17 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+.winner-box button {
+  background-color: rgb(251, 14, 251);
+  color: white;
+  font-size: 2rem;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0);
 }
 
 .winner-card {
@@ -162,4 +179,7 @@ label {
 }
 .log-container ol li button:hover {
   border: 2px solid white;
+}
+.winner-box button:hover {
+  border: 3px solid white;
 }
